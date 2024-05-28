@@ -23,5 +23,5 @@ if (isset($_POST['email'], $_POST['p'])) {
 } else {
 
     // As variaveis POST corretas nao foram enviadas para esta pagina.
-    echo 'Invalid Request' (Requesição Invalida);
+    echo 'Invalid Request';
 }

@@ -13,7 +13,7 @@ function sec_session_start(){
 
     // Assim voce força a sessão a usar apenas cookies.
 
-    if (ini_set('session.use_only_cookies',1)===FALSE) {
+    if (ini_set('session.use_only_cookies',1) === FALSE) {
         header("Location: ../error.php?err=Could not initiate a safe session (ini_set)");
         exit();
     }
@@ -22,7 +22,7 @@ function sec_session_start(){
 
     $cookieParams = session_get_cookie_params();
 
-    session_set_cookie_params($cookeParams["lifetime"],
+    session_set_cookie_params($cookieParams["lifetime"],
 
         $cookieParams["path"],
         $cookieParams["domain"],
@@ -62,7 +62,7 @@ function login($email, $password, $mysqli){
                 // a conta esta bloqueada
                 //envia um email ao usuario informado que a conta esta bloqueada
 
-                retorna false (falso);
+                return false;
         } else {
             // Verifica se a senha confere com o que consta no banco de dados
             // a senha do usuario é enviada.
@@ -75,7 +75,7 @@ function login($email, $password, $mysqli){
                 $user_id = preg_replace("/[^0-9]+/", "",$user_id);
                 $_SESSION['user_id'] = $user_id;
                 // proteção XSS conforme imprimimos este valor
-                $username = preg_replace"/[^a-zA-Z0-9_\-]+/", "", $username);
+                $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
                 $_SESSION["username"] = $username;
                 $_SESSION['login_string'] = hash('sha512', $password .$user_browser);
                 // Login concluido com sucesso.
@@ -175,11 +175,11 @@ function login_check($mysqli) {
 
 function esc_url($url) {
 
-    if (" == $url) {
+    if (" == $url") {
         return $url;
     }
 
-    $url = preg_replace('|[^a-z0-9~+_.?#=!&;,/:%@$\|*\'()\\x80-xff]|i'',",$url);
+    $url =  preg_replace('|[^a-z0-9-~+_.?#=!&;,/:%@$\|*\'()\\x80-\\xff]|i', '', $url);
 
     $strip = array('%0d','%0a','%0D','%0A');
     $url = (string) $url;
@@ -187,7 +187,7 @@ function esc_url($url) {
 
     $count = 1;
     while ($count) {
-        $url = str_replace($strip, '',$url,$count);
+        $url = str_replace($strip, "",$url,$count);
     }
 
     $url = str_replace(';//','://', $url);
@@ -203,7 +203,7 @@ function esc_url($url) {
         // Estamos interessados em links relacionados provenientes de 
         // $_SERVER['PHP_SELF']
 
-        return ";
+        return '';
     } else {
         return $url;
     }
