@@ -42,9 +42,9 @@ include_once 'includes/functions.php';
     <form action="<?php echo esc_url($_SERVER['PHP_SELF']);?>"
             method="post"
             name="registration_form">
-        Username: <input type="text"
-            name="username"
-            id="username"/><br>
+        Username: <input type='text'
+            name='username'
+            id='username'/><br>
         Email: <input type="text" name="email" id="email"/><br>
         Password: <input type="password"
             name="password"
@@ -60,6 +60,6 @@ include_once 'includes/functions.php';
                     this.form.password
                     this.form.confirmpwd">
         </form>
-        <p>Return to the <a href="index.php">Login page</a>.</p>
+        <p>Return to the <a href="login.php">Login page</a>.</p>
 </body>
 </html>

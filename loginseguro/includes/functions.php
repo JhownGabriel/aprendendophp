@@ -164,6 +164,7 @@ function login_check($mysqli) {
         } else {
 
             // Nao foi logado
+            header("Location: ../error.php?err=Database error: cannot prepare statement")
             return false;
         } 
     } else {
@@ -175,7 +176,7 @@ function login_check($mysqli) {
 
 function esc_url($url) {
 
-    if (" == $url") {
+    if ('' == $url) {
         return $url;
     }
 
@@ -196,7 +197,7 @@ function esc_url($url) {
 
 
     $url = str_replace('&amp;', '&#038;', $url);
-    $url = str_replace("", '&#039;', $url);
+    $url = str_replace("'", '&#039;', $url);
 
     if ($url[0] !== '/') {
 

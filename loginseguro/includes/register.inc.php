@@ -37,7 +37,7 @@ if (isset($_POST['username'],$_POST['email'], $_POST['p'])) {
 
     if ($stmt) {
 
-        $stmt->bind_param("s",$email);
+        $stmt->bind_param('s',$email);
         $stmt->execute();
         $stmt->store_result();
 
@@ -58,15 +58,15 @@ if (isset($_POST['username'],$_POST['email'], $_POST['p'])) {
 
     if (empty($erro_msg)) {
         // Crie um salt aleatorio
-        $random_salt = hash('sha512',uniqid(openssl_random_pseudo_bytes(16), true));
+        $random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(16), true));
 
 
         // Crie uma senha com salt
         $password = hash('sha512',$password. $random_salt);
 
         // Inserir o novo usuario no banco de dados
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username,email,password,salt) VALUES (?,?,?,?)")) {
-            $insert_stmt->bind_param("ssss", $username,$email,$password,$random_salt);
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt) VALUES (?,?,?,?)")) {
+            $insert_stmt->bind_param('ssss', $username, $email, $password, $random_salt);
 
             // Executar a tarefa pre-estabelecida.
 

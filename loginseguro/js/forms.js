@@ -18,10 +18,10 @@ function formhash(form, password) {
 
 function regformhash(form, uid, email, password, conf) {
     // Confira se cada campo tem um valor
-    if (uid.value == "      || 
-        email.value == "        || 
-        password.value == "         || 
-        conf.value == "){
+    if (uid.value == ''      || 
+        email.value == ''        || 
+        password.value == ''         || 
+        conf.value == ''){
 
         alert('Você deve fornecer todos os detalhes solicitados. Por favor, tente novamente');
         return false;
@@ -49,12 +49,11 @@ function regformhash(form, uid, email, password, conf) {
 
     // Pelo menos um numero, uma letra minuscula e outra maiuscula
     // Pelo menos 6 caracteres
-
+               
     var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
      
     if (!re.test(password.value)) {
-        alert('As palavras-passe devem conter pelo menos um número, uma letra minúscula e uma letra maiúscula.
-    Por favor, tente novamente');
+        alert('As palavras-passe devem conter pelo menos um número, uma letra minúscula e uma letra maiúscula. Por favor, tente novamente');
         return false;
     }
     // Verificar se a senha e a confirmação são as mesmas
