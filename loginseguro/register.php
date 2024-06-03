@@ -1,7 +1,6 @@
 <?php
 
 include_once 'includes/register.inc.php';
-
 include_once 'includes/functions.php';
 
 ?>
@@ -56,10 +55,10 @@ include_once 'includes/functions.php';
             value="Register"
             onclick="return regformhash(this.form,
                     this.form.username,
-                    this.form.email
-                    this.form.password
-                    this.form.confirmpwd">
+                    this.form.email,
+                    this.form.password,
+                    this.form.confirmpwd);">
         </form>
-        <p>Return to the <a href="login.php">Login page</a>.</p>
+        <p>Return to the <a href="index.php">Login page</a>.</p>
 </body>
 </html>

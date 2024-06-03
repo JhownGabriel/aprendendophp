@@ -49,7 +49,7 @@ function login($email, $password, $mysqli){
         $stmt->store_result();
 
         // obtem variaveis a partir dos resultados.
-        $stmt->bind_result($user_id, $username,$db_password, $salt);
+        $stmt->bind_result($user_id, $username, $db_password, $salt);
         $stmt->fetch();
 
         // faz o hash da senha com um salt exclusivo.
@@ -104,8 +104,8 @@ function checkbrute($user_id, $mysqli) {
 
     $valid_attempts = $now - (2 * 60 * 60);
 
-    if ($stmt = $mysqli->prepare("SELECT time FROM login_attempts <code><pre> WHERE user_id = ? AND time > '$valid_attempts'")) {
-        $stmt->bind_param("i", $user_id);
+    if ($stmt = $mysqli->prepare("SELECT time FROM login_attempts WHERE user_id = ? AND time > '$valid_attempts'")) {
+        $stmt->bind_param('i', $user_id);
 
         // executa a tarefa pré-estabelecida.
 
@@ -162,10 +162,9 @@ function login_check($mysqli) {
                 return false;
             } 
         } else {
-
             // Nao foi logado
-            header("Location: ../error.php?err=Database error: cannot prepare statement")
-            return false;
+            header("Location: ../error.php?err=Database error: cannot prepare statement");
+            exit();
         } 
     } else {
 

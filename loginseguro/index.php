@@ -36,6 +36,6 @@ if (login_check($mysqli) == true) {
         </form>
         <p>Se voce não tem uma conta, por favor <a href="register.php">register</a></p>
         <p>Se voce acabou, por favor <a href="includes/logout.php">log out</a></p>
-        <p>Voce atualmente esta logado <?php echo $logged ?>.</p>
+        <p>Seu Status atualmente <?php echo $logged ?>.</p>
     </body>
 </html>
