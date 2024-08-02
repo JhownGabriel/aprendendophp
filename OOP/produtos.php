@@ -12,12 +12,9 @@ class Produtos {
     public $descontinuado;
 
     // metodos
-    public function __construct($nomeDoProduto, $codigoFornecedor, $codigoCategoria,
-    $quantidadePorUnidade, $precoUnitario, $unidadesEmEstoque, $unidadesPedidas, $nivelDeEstoque,
-    $descontinuado){
+    public function __construct($nomeDoProduto, $quantidadePorUnidade, $precoUnitario,
+    $unidadesEmEstoque, $unidadesPedidas, $nivelDeEstoque, $descontinuado){
         $this->nomeDoProduto = $nomeDoProduto;
-        $this->codigoFornecedor = $codigoFornecedor;
-        $this->codigoCategoria = $codigoCategoria;
         $this->quantidadePorUnidade = $quantidadePorUnidade;
         $this->precoUnitario = $precoUnitario;
         $this->unidadesEmEstoque = $unidadesEmEstoque;
@@ -25,5 +22,22 @@ class Produtos {
         $this->nivelDeEstoque = $nivelDeEstoque;
         $this->descontinuado = $descontinuado;
     }
+        private function set_produto(){
+            $this->nomeDoProduto = $nomeDoProduto;
+            $this->quantidadePorUnidade = $quantidadePorUnidade;
+            $this->precoUnitario = $precoUnitario;
+            $this->descontinuado = $descontinuado;
+        }
+            private function get_produto(){
+                $this->nomeDoProduto = $nomeDoProduto;
+                $this->quantidadePorUnidade = $quantidadePorUnidade;
+                $this->precoUnitario = $precoUnitario;
+                $this->descontinuado = $descontinuado;
+            }
+            private function get_estoque(){
+                $this->unidadesEmEstoque = $unidadesEmEstoque;
+                $this->unidadesPedidas = $unidadesPedidas;
+                $this->nivelDeEstoque = $nivelDeEstoque;
+            }
 }
 ?>

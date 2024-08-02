@@ -7,7 +7,7 @@ class ItensPedidos {
     private $desconto;
 
     // metodos
-    public function __construct($numeroDoPedido, $codigoDoProduto, $PrecoUnitario, $quantidade,
+    private function __construct($numeroDoPedido, $codigoDoProduto, $PrecoUnitario, $quantidade,
     $desconto){
         $this->numeroDoPedido = $numeroDoPedido;
         $this->codigoDoProduto = $codigoDoProduto;
@@ -15,9 +15,15 @@ class ItensPedidos {
         $this->quantidade = $quantidade;
         $this->desconto = $desconto;
     }
-        function set_preco($PrecoUnitario){
+        private function set_precoequantidade(){
             $this->PrecoUnitario = $PrecoUnitario;
+            $this->quantidade = $quantidade;
+            $this->desconto = $desconto;
         }
-        
+            private function get_precoequantidade(){
+                $this->PrecoUnitario = $PrecoUnitario;
+                $this->quantidade = $quantidade;
+                $this->desconto = $desconto;
+            }
 }
 ?>

@@ -11,5 +11,15 @@ class Categorias {
         $this->descricao = $descricao;
         $this->$figura = $figura;
     }
+        private function set_informacoes(){
+            $this->nomeDaCategoria = $nomeDaCategoria;
+            $this->descricao = $descricao;
+            $this->$figura = $figura;
+        }
+            private function get_informacoes(){
+                $this->nomeDaCategoria = $nomeDaCategoria;
+                $this->descricao = $descricao;
+                $this->$figura = $figura; 
+            }
 }
 ?>

@@ -14,12 +14,9 @@ class Pedidos {
     public $paisDeDestino;
 
     // metodos
-    public function __construct($numeroPedido, $codigoCliente, $codigoFuncionario, $dataDoPedido, $dataDeEntrega,
+    public function __construct($dataDoPedido, $dataDeEntrega,
     $dataDeEnvio, $frete, $nomeDestinatario, $EnderecoDestinatario, $cidadeDeDestino, $cepDeDestino,
     $paisDeDestino){
-        $this->numeroPedido = $numeroPedido;
-        $this->codigoCliente = $codigoCliente;
-        $this->codigoFuncionario = $codigoFuncionario;
         $this->dataDoPedido = $dataDoPedido;
         $this->dataDeEntrega = $dataDeEntrega;
         $this->dataDeEnvio = $dataDeEnvio;
@@ -30,5 +27,35 @@ class Pedidos {
         $this->cepDeDestino = $cepDeDestino;
         $this->paisDeDestino = $paisDeDestino;
     }
+        private function set_datas(){
+            $this->dataDoPedido = $dataDoPedido;
+            $this->dataDeEntrega = $dataDeEntrega;
+            $this->dataDeEnvio = $dataDeEnvio;
+            $this->frete = $frete;
+        }
+            private function get_datas(){
+                $this->dataDoPedido = $dataDoPedido;
+                $this->dataDeEntrega = $dataDeEntrega;
+                $this->dataDeEnvio = $dataDeEnvio;
+                $this->frete = $frete;
+            }
+        private function set_enderecos(){
+            $this->EnderecoDestinatario = $EnderecoDestinatario;
+            $this->cidadeDeDestino = $cidadeDeDestino;
+            $this->cepDeDestino = $cepDeDestino;
+            $this->paisDeDestino = $paisDeDestino;
+        }
+            private function get_enderecos(){
+                $this->EnderecoDestinatario = $EnderecoDestinatario;
+                $this->cidadeDeDestino = $cidadeDeDestino;
+                $this->cepDeDestino = $cepDeDestino;
+                $this->paisDeDestino = $paisDeDestino;
+            }
+        private function set_nomes(){
+            $this->nomeDestinatario = $nomeDestinatario;
+        }
+            private function get_nomes(){
+                $this->nomeDestinatario = $nomeDestinatario;
+            }
 }
 ?>

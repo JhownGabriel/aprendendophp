@@ -16,7 +16,7 @@ class Cliente {
         $this->nomeCliente = $nomeCliente;
         $this->endereco = $endereco;
         $this->cidade = $cidade;
-        $this->cep = $cep
+        $this->cep = $cep;
         $this->uf = $uf;
         $this->pais = $pais;
         $this->telefone = $telefone;
